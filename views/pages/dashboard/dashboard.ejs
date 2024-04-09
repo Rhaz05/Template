@@ -1,0 +1,178 @@
+
+<!-- CARD -->
+<div class="row">
+    <div class="col-md mb-3">
+        <div id="cablingrequest">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                SAMPLE CARD
+                            </div>
+                            <div id="cablingequipmentrequest" class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-money-check fa-3x dashboard-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md mb-3">
+        <div id="cablingrequest">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                SAMPLE CARD
+                            </div>
+                            <div id="cablingequipmentreport" class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="far fa-clipboard fa-3x dashboard-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md">
+        <div id="cablingrequest">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                SAMPLE CARD
+                            </div>
+                            <div id="totalequipmentcost" class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-dollar-sign fa-3x dashboard-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card shadow">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header d-flex flex-row align-items-center justify-content-between">
+                <div class="table-title">
+                    Graph
+                </div>
+                <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                        aria-labelledby="dropdownMenuLink">
+                        <div class="dropdown-header">Actions:</div>
+                        <a class="dropdown-item" href="#">Generate Report</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">...</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <div class="chart-bar chart-content">
+                    <div class="row">
+                        <canvas id="equipment-stocks-chart"></canvas>
+                    </div>
+                    <div class="row justify-content-center mobile-hidden">
+                        <div class="loading-wave" id="graph-loading">
+                            <div class="loading-bar"></div>
+                            <div class="loading-bar"></div>
+                            <div class="loading-bar"></div>
+                            <div class="loading-bar"></div>
+                            <div class="loading-bar"></div>
+                            <div class="loading-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 mb-2">
+        <div class="card shadow table-size">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="table-title">
+                            Table
+                        </div>
+                    </div>
+                    <div class="col-6 pt-2 text-right">
+                        <button class="custom-btn cw-7rem" id="convertopdf" type="button"
+                            style="border-radius: 0.2rem;">
+                            <i class="fas fa-file-export"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive scrollable-table-container">
+                <table class="table custom-mobile-table" id="sample-table" width="100%">
+                    <thead class="table-header" style="border: none;">
+                        <tr>
+                            <th>header</th>
+                            <th>header</th>
+                            <th>header</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="table-light">
+                        <tr>
+                            <td><div class="custom-loader"></div></td>
+                            <td><div class="custom-loader"></div></td>
+                            <td><div class="custom-loader"></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="custom-loader"></div></td>
+                            <td><div class="custom-loader"></div></td>
+                            <td><div class="custom-loader"></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="custom-loader"></div></td>
+                            <td><div class="custom-loader"></div></td>
+                            <td><div class="custom-loader"></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="custom-loader"></div></td>
+                            <td><div class="custom-loader"></div></td>
+                            <td><div class="custom-loader"></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="custom-loader"></div></td>
+                            <td><div class="custom-loader"></div></td>
+                            <td><div class="custom-loader"></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="custom-loader"></div></td>
+                            <td><div class="custom-loader"></div></td>
+                            <td><div class="custom-loader"></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="custom-loader"></div></td>
+                            <td><div class="custom-loader"></div></td>
+                            <td><div class="custom-loader"></div></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

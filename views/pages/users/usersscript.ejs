@@ -1,0 +1,114 @@
+<script>
+    $(document).ready(function () {
+        let id = "";
+        let employeeid = "";
+        let username = "";
+        let status = "";
+        LoadList();
+
+        let sampleData = [{"id":"bad587bd-d268-4f09-8ffe-2c3d2bac677b","personelid":"01HV0FB4BXXW61NDN7VGX8X7T7","username":"dburkwood0","branch":"CANCIDAS"},
+                        {"id":"7e5dda30-3527-4914-8dfb-46803de956bc","personelid":"01HV0FB4BY4WT94GVJA8RFSEK5","username":"icolloby1","branch":"Ropinirole Hydrochloride"},
+                        {"id":"8466cfdd-6d6d-4b39-896f-a252ba957bb6","personelid":"01HV0FB4BZRM1QDD6GV4KHVJNQ","username":"clillo2","branch":"Hamamelis Virginiana 30c"},
+                        {"id":"23024b50-34dd-45d2-a24b-711634c38464","personelid":"01HV0FB4C030TAH9KZMGS56V90","username":"dhoodless3","branch":"Ondansetron"},
+                        {"id":"273bee3e-f7f4-47a2-a25a-892fe53a19f2","personelid":"01HV0FB4C173JA6Z75AK0B0A1X","username":"rminico4","branch":"Energize"}];
+
+
+        const loader = `  
+          <tr>
+            <td><div class="custom-loader"></div></td>
+            <td><div class="custom-loader"></div></td>
+            <td><div class="custom-loader"></div></td>
+            <td><div class="custom-loader"></div></td>
+            <td><div class="custom-loader"></div></td>
+          </tr>`;
+
+        const tbody = $('#datatable tbody');
+        for (let i = 0; i < 9; i++) {
+            tbody.append(loader);
+        }
+
+        populatedatatable(sampleData)
+
+
+        $("#datatable tbody").on("click", "tr", function () {
+            var dataRow = [];
+            $(this)
+                .closest("tr")
+                .find("td")
+                .each(function () {
+                    dataRow.push($(this).text());
+                });
+            console.log(dataRow);
+            id = dataRow[0];
+            employeeid = dataRow[1];
+            username = dataRow[2];
+            status = dataRow[8];
+        });
+
+        $(document).on("click", "#editBtn", function () {
+            $("#idmodal").val(id);
+        })
+
+        $(document).on("click", "#addBtn", function () {
+            success("Alert", "Sample Alert Message")
+        })
+
+        //Search Table Functionality
+        $("#search").on("input", function () {
+            filterTableRows("#datatable", 5, "#search");
+        });
+
+        function populatedatatable(data) {
+            // console.log(data);
+            const tableBody = $('#datatable tbody');
+            tableBody.empty();
+
+            if (data.length === 0) {
+                const tr = $('<tr>').append($('<td>', {
+                    colspan: 4,
+                    class: 'text-center',
+                    text: 'No Data Matched'
+                }));
+                tableBody.append(tr);
+            } else {
+                data.forEach(item => {
+                    let action = ` <span class="editbutton" id="editBtn" name="editBtn" data-toggle="modal" data-target="#editModal"><i class="fas fa-edit" style="color: rgb(99, 115, 129);"></i></span>`
+                    const tr = $('<tr>').append(
+                        $('<td>', { text: item.id, 'data-label': 'ID', class: 'custom-mobile-align' }),
+                        $('<td>', { text: item.personelid, 'data-label': 'Password', class: 'custom-mobile-align  no-wrap' }),
+                        $('<td>', { text: item.username, 'data-label': 'User name', class: 'custom-mobile-align' }),
+                        $('<td>', { text: item.branch, 'data-label': 'User name', class: 'custom-mobile-align' }),
+                        $('<td>', { html: action, 'data-label': 'User name', class: 'custom-mobile-align' }),
+                    );
+
+                    tableBody.append(tr);
+                });
+            }
+        }
+
+        function LoadList() {
+            let mockData = [{"id":"4e009b19-dc4f-4aa5-a59e-beea82cda9a2","name":"Snaptags","status":"ACTIVE"},
+                            {"id":"9f06284a-45e5-4922-9c74-05abb954ef89","name":"Buzzdog","status":"ACTIVE"},
+                            {"id":"1a8df5be-dcf8-4922-bba0-dc58271e48d9","name":"Livetube","status":"ACTIVE"},
+                            {"id":"63518639-c598-45dd-a9da-690dce8c4788","name":"Bubblebox","status":"ACTIVE"},
+                            {"id":"07c1ae02-9c85-4d66-971b-87fbdedc145f","name":"Tagpad","status":"ACTIVE"}];
+            let activeData = [];
+            let dropdownID = "branchDropdown";
+            let inputID = "branch";
+            let hiddenID = "branchID";
+            $.each(mockData, (key, item) => {
+                if (item.status === "ACTIVE") {
+                    let name = item.name;
+                    let id = item.id;
+                    activeData.push({
+                        display: name,
+                        value: id,
+                    });
+                }
+            });
+            console.log(activeData);
+            AddDropdownData(dropdownID, activeData, inputID, hiddenID)
+        };
+
+    });
+</script>
